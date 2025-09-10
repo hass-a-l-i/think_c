@@ -1,0 +1,12 @@
+So to generate random number between x - y INCLUSIVE
+
+We need to use rand() = random number between 36767
+Finf diff = y - x => this is our range
+If divide rand by this, remainder will give us random between 0 and y - x - 1
+
+So we translate our divider by + 1:
+divider = y - x + 1 => divider min unchanged at 0, max now becomes y - x
+Now we get rand % divider = number {0, y - x}
+
+then add x to translate to our range
+number {x, y}
